@@ -1,0 +1,75 @@
+
+<div class="container-fluid" id="wrapper">
+     <div class="row text-white bg-dark py-1">
+                <div class="float-left pl-4">
+                    <h2 style="text-align: center;">My Shelter</h2>
+                </div>
+            </div>
+        <div class="float-right py-1 pl-3" >
+            <a href="/profile" class="p-2 align-middle" routerLink="profile"> <mat-icon class="align-middle">person</mat-icon> <span class="align-middle">{{ username }}</span></a>
+            <a href class="p-2 align-middle" (click)="logout()"> <mat-icon class="align-middle">logout</mat-icon> <span class="align-middle">LogOut</span></a>
+        
+          
+          </div>
+</div>
+
+
+<div class="row" >
+            <div id="app">
+                <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="isLoggedIn">
+  
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+                          <li class="nav-item">
+                              <a href="/animal" class="nav-link" routerLink="animal">Animal</a>
+                          </li>
+                      </ul>
+  
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+                            <li class="nav-item">
+                                <a href="/medical" class="nav-link" routerLink="medical">Animal's Medical Chart</a>
+                            </li>
+                        </ul>
+  
+        <ul class="navbar-nav mr-auto" routerLinkActive="active">
+                              <li class="nav-item">
+                                  <a href="/shelter" class="nav-link" routerLink="shelter">Shelter</a>
+                              </li>
+                          </ul>
+  
+      <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="showAdminBoard">
+                            <li class="nav-item">
+                                <a href="/employee" class="nav-link" routerLink="employee">Employee</a>
+                            </li>
+                        </ul>
+  
+        <ul class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="showAdminBoard">
+                              <li class="nav-item">
+                                  <a href="/person" class="nav-link" routerLink="person">Client</a>
+                              </li>
+                          </ul>
+  
+          <ul class="navbar-nav mr-auto" routerLinkActive="active">
+                                <li class="nav-item">
+                                    <a href="/adoption" class="nav-link" routerLink="adoption">Adoption</a>
+                                </li>
+                            </ul>
+  
+            <ul class="navbar-nav mr-auto" routerLinkActive="active">
+                                  <li class="nav-item">
+                                      <a href="/donation" class="nav-link" routerLink="donation">Donation</a>
+                                  </li>
+                              </ul>
+                   
+                </nav>
+            </div>
+    <div >
+              <router-outlet></router-outlet>
+          </div>
+        </div>
+        <footer class="my-2 pt-5 text-muted text-center text-small">
+            <hr class="mb-1">
+            <h6>Pinteala Paula-Eliza</h6>
+            <h6>Facultatea de Matematica si Informatica din cadrul Universitatii Bucuresti</h6>
+            <h6>Specializarea Informatica</h6>
+            <p class="mb-1"> 2021-2022</p>
+        </footer>
